@@ -2,8 +2,8 @@ SET search_path TO canvas;
 
 DROP VIEW IF EXISTS assignments_account_course;
 
-CREATE OR REPLACE VIEW assignments_account_course AS 
-    SELECT 
+CREATE OR REPLACE VIEW assignments_account_course AS
+    SELECT
         a1."name" AS "account_name",
         a1.id AS "account_id",
 	    c."name" AS "course_name",
@@ -25,9 +25,9 @@ CREATE OR REPLACE VIEW assignments_account_course AS
 	   	a.context_id,
 	   	a.context_type
     FROM assignments a
-    JOIN courses c 
-        ON c.id = a.context_id 
-    JOIN accounts a1 
+    JOIN courses c
+        ON c.id = a.context_id
+    JOIN accounts a1
         ON a1.id  = c.account_id
     WHERE
         a.workflow_state != 'deleted' AND
