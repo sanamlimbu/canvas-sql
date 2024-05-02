@@ -25,5 +25,5 @@ CREATE OR REPLACE VIEW additional_attempt_assignments AS
         ON a1.id  = c.account_id
     WHERE
         a.workflow_state != 'deleted' AND
-	    a.title LIKE '%dditional%' AND
-	    c.workflow_state != 'deleted';
+        a.title LIKE '%dditional%' AND
+        c.workflow_state != 'deleted';

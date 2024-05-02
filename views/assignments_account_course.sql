@@ -31,5 +31,5 @@ CREATE OR REPLACE VIEW assignments_account_course AS
         ON a1.id  = c.account_id
     WHERE
         a.workflow_state != 'deleted' AND
-	    c.workflow_state != 'deleted' AND
-	   	a1.workflow_state != 'deleted';
+        c.workflow_state != 'deleted' AND
+        a1.workflow_state != 'deleted';
