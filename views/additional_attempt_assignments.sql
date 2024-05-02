@@ -1,5 +1,12 @@
 SET search_path TO canvas;
 
+DROP VIEW IF EXISTS additional_attempt_assignments;
+
+-- In PostgreSQL, when you use CREATE OR REPLACE VIEW, the view definition is replaced with the new definition provided. 
+-- However, if you change the sequence of columns in the new view definition compared to the existing view, 
+-- it can indeed throw an error. This is because PostgreSQL compares the new view definition with the existing one 
+-- and expects them to match in terms of the column sequence.
+
 CREATE OR REPLACE VIEW additional_attempt_assignments AS 
     SELECT 
         a1."name" AS "account_name",
